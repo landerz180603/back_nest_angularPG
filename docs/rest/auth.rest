@@ -1,0 +1,23 @@
+POST http://127.0.0.1:3000/auth/register
+Content-Type: application/json
+
+{
+    "name": "Paul",
+    "email": "paulgallo@gmail.com",
+    "password": "123456789paul"
+}
+
+### login sin conexion a la base de datos
+
+POST http://127.0.0.1:3000/auth/login
+Content-Type: application/json
+
+{
+    "name": "Andres",
+    "email": "andreserazo@gmail.com",
+    "password": "123456789paul"
+}
+### Users
+
+GET http://127.0.0.1:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdWxnYWxsb0BnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNzU5NzI4MjYzLCJleHAiOjE3NTk3MzE4NjN9.kyTmvIbkG1t7JSf6ByhHEyg9xC8C2k0WFwTyMxh1oVc
