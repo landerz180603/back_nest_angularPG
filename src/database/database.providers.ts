@@ -1,19 +1,21 @@
-import { DataSource } from 'typeorm';
+import { ConfigService } from "src/config/config.service";
+import { DataSource } from "typeorm";
 
 export const databaseProvider = [
   {
     provide: 'DATABASE_CONNECTION',
-    useFactory: async (): Promise<DataSource> => {
+    inject: [ConfigService],
+    useFactory: (config: ConfigService) => {
       const dataSource = new DataSource({
         type: 'postgres',
-        host: 'localhost',
-        port: 5432,
-        username: 'postgres',
-        password: '12345',
-        database: 'BACKEND.PG',
+        host: config.get('HOST') || 'localhost',
+        port: +config.get('PORT_DB'),
+        username: config.get('USERNAME') || 'root',
+        password: config.get('PASSWORD') || 'prueba',
+        database: config.get('DATABASE'),
       });
 
       return dataSource.initialize();
     },
   },
-];
+]
