@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class  $npmConfigName$1761073336529 implements MigrationInterface {
-    name = ' $npmConfigName$1761073336529'
+export class USUARIOS1761507917057 implements MigrationInterface {
+    name = 'USUARIOS1761507917057'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`CREATE TABLE "user" ("id" SERIAL NOT NULL, CONSTRAINT "PK_cace4a159ff9f2512dd42373760" PRIMARY KEY ("id"))`);
@@ -12,4 +12,3 @@ export class  $npmConfigName$1761073336529 implements MigrationInterface {
     }
 
 }
-
